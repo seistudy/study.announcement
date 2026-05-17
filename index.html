@@ -1,99 +1,724 @@
-      <div class="lp-title">必死に勉強しているのに、<br>模試の判定が変わらない。そのままで本当に間に合いますか？</div>
-      <div class="lp-lead">
-        間違った努力は、貴重な時間を奪い続ける。<br>
-        <span class="accent-red">超難関大医学生による、学習設計＆完全伴走コーチング</span>
-      </div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合格への地図｜ロードマップ作成会</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #c0392b;
+    --red-dark: #922b21;
+    --blue: #1a3a5c;
+    --blue-mid: #2471a3;
+    --gold: #d4a017;
+    --gold-light: #f0c040;
+    --bg: #0d0d0d;
+    --bg2: #111;
+    --text: #f0ece4;
+    --text-muted: #a09888;
+    --border: rgba(255,255,255,0.07);
+  }
 
-      <h2 class="lp-h2">【問題提起】なぜあなたの成績は頭打ちになっているのか</h2>
-      <p>
-        「毎日何時間も机に向かっているのに、結果が出ない」<br>
-        「塾に通い、有名な参考書もやっているのに、模試の点数が乱高下する」<br>
-        もしあなたが今そう感じているなら、<strong>非常に危険な状態</strong>です。
-      </p>
-      <p>
-        医学部受験において、努力の量は前提にすぎません。問題なのは、あなたの能力ではなく<strong>「勉強の進め方（学習設計）」が根本的に間違っていること</strong>です。どこに理解の抜けがあるのか把握しないまま、行き当たりばったりで学習を続けても、本番で確実に点をもぎ取る実力は定着しません。
-      </p>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      <div class="story-box">
-        <strong>指導者の実体験：</strong><br>
-        私自身、偏差値40台から医学部を目指した当初、がむしゃらに勉強しても全く結果が出ませんでした。「才能がないのか」と絶望しましたが、<strong>正しい順番で理解を積み上げ、徹底的に進捗を管理する仕組み</strong>を作った瞬間、成績が爆発的に安定しました。（その後、国立大医学部・慶応医学部に現役合格）。これは偶然ではなく、必然の成果です。
-      </div>
+  html { scroll-behavior: smooth; }
 
-      <h2 class="lp-h2">【解決策】普通の塾では見逃される「伴走」という最強の武器</h2>
-      <p>
-        成績が伸び悩む最大の原因は、「どう勉強すべきか」「計画通りに進んでいるか」を誰も管理してくれないことです。だからこそ私たちは、<strong>超難関大医学生による「学習計画の完全設計」と「毎日の伴走」</strong>を提供します。
-      </p>
-      <ul class="benefit-list">
-        <li><strong>勉強計画の完全設計：</strong> 現状分析から合格までの最短ルートを明確化</li>
-        <li><strong>毎日の進捗管理と週1の軌道修正：</strong> サボれない、迷わない環境を構築</li>
-        <li><strong>理解の抜け修正：</strong> 根本的な弱点を即座に発見し、深い指導で潰す</li>
-        <li><strong>勉強法の徹底指導：</strong> 本質的ではない無駄な勉強をゼロにする</li>
-      </ul>
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
 
-      <h2 class="lp-h2">【料金プラン】あなたの現状に合わせた3つのステップ</h2>
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
 
-      <div class="plan-container">
-        <div class="plan-name">お試しプラン</div>
-        <p>現状の勉強法を根底から見直す第一歩。</p>
-        <div class="plan-price">
-          初月 9,800円 <span style="font-size: 0.6em; color: #333; font-weight: normal">(税込)</span>
-        </div>
-        <ul class="benefit-list" style="margin-bottom: 0">
-          <li>理解の抜け診断 / 勉強計画の完全設計</li>
-          <li>進捗管理テンプレ提供 / 勉強法指導</li>
-          <li>週1回のチェック(15分)＋1回の深いセッション(60分)</li>
-        </ul>
-      </div>
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192,57,43,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(36,113,163,0.12) 0%, transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
 
-      <div class="plan-container">
-        <div class="plan-name">コース①（ベーシック伴走）</div>
-        <div class="plan-price">
-          19,800円 <span style="font-size: 0.6em; color: #333; font-weight: normal">/ 月 (税込)</span>
-        </div>
-        <ul class="benefit-list" style="margin-bottom: 0">
-          <li>週一回60分の学習設計</li>
-          <li>毎日の進捗確認と整理</li>
-        </ul>
-      </div>
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 6px 18px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease both;
+  }
 
-      <div class="plan-container" style="border: 2px solid #001f3f">
-        <div class="plan-name">コース②（スタンダード伴走・推奨）</div>
-        <p>圧倒的なサポート量で学習を止めない、最も確実なプラン。</p>
-        <div class="plan-price">
-          49,000円 <span style="font-size: 0.6em; color: #333; font-weight: normal">/ 月 (税込)</span>
-        </div>
-        <ul class="benefit-list" style="margin-bottom: 0">
-          <li>週一回60分の学習設計 ＋ 毎日の進捗確認整理</li>
-          <li><strong>LINEでの質問・相談受付（無制限）</strong></li>
-          <li><strong>ONLINE個別指導（週90分まで可能）</strong></li>
-        </ul>
-      </div>
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
 
-      <p style="margin-top: 16px; font-weight: 700; color: #990000">
-        ※7日間限定 返金サポート付き（やるべきことをやって成績が上がらなかった場合対象）
-      </p>
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+    display: inline-block;
+  }
 
-      <h2 class="lp-h2">【FAQ】よくあるご質問</h2>
-      <div class="faq-item">
-        <div class="faq-q">Q. どんな人に向いていますか？</div>
-        <div class="faq-a">A. 本気で医学部を目指しているのに、勉強法がわからず成績が伸び悩んでいる方に最適です。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 塾と併用できますか？</div>
-        <div class="faq-a">A. はい。塾の進捗も考慮した上で、あなた専用の学習計画を設計します。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 返金サポートの条件は？</div>
-        <div class="faq-a">
-          A.
-          指示されたタスクと進捗報告を適切に行ったにもかかわらず、全く効果が感じられなかった場合、入会後7日間限定で対応します。
-        </div>
-      </div>
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 560px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
 
-      <div class="cta-area">
-        <h2 style="color: #fff; margin-top: 0; border: none">手遅れになる前に、正しい軌道へ。</h2>
-        <p>もう、模試の結果に一喜一憂するのは終わりにしませんか。<br>今が一番の分岐点です。</p>
-        <span class="cta-link-text">まずは無料相談へ申し込む</span>
-      </div>
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    animation: fadeUp 1s 0.6s ease both;
+  }
 
-      <div class="target-summary">
+  .scroll-hint span {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-muted), transparent);
+    animation: scrollDown 1.6s infinite;
+  }
+
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── CHAPTERS ── */
+  .chapter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 28px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .chapter.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Chapter label bar */
+  .chapter-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .label-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    padding: 5px 14px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .badge-red    { background: var(--red);    color: #fff; }
+  .badge-blue   { background: var(--blue);   color: #fff; }
+  .badge-orange { background: #c0720a;       color: #fff; }
+  .badge-yellow { background: var(--gold);   color: #111; }
+
+  .label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .chapter-number {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* Headings */
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    line-height: 1.4;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .chapter p {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  .chapter p strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 32px 0;
+    background: rgba(212,160,23,0.07);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull-quote p {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* Bullet list */
+  .bullet-list {
+    list-style: none;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .bullet-list li .icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #fff;
+    margin-top: 2px;
+  }
+
+  /* Highlight stat row */
+  .stat-row {
+    display: flex;
+    gap: 20px;
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 1;
+    min-width: 140px;
+    padding: 22px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    text-align: center;
+  }
+
+  .stat-card .num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-card .desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Truth box */
+  .truth-box {
+    background: linear-gradient(135deg, rgba(192,57,43,0.15), rgba(192,57,43,0.04));
+    border: 1px solid rgba(192,57,43,0.4);
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    margin: 32px 0;
+  }
+
+  .truth-box .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .truth-box p {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  /* Map visual */
+  .map-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 32px 0;
+    position: relative;
+  }
+
+  .map-steps::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--blue-mid));
+  }
+
+  .map-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px 0 18px 0;
+    position: relative;
+  }
+
+  .map-step .dot {
+    width: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .map-step .dot-inner {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .map-step .body {
+    flex: 1;
+  }
+
+  .map-step .body strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .map-step .body span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 100px 28px 120px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .cta-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cta-section h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .cta-section h2 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 48px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 20px 56px;
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.4);
+    cursor: pointer;
+    border: none;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(192,57,43,0.55);
+  }
+
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+
+  .cta-btn:hover::after {
+    transform: translateX(100%);
+  }
+
+  .cta-note {
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── UTILS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .text-red    { color: var(--red); }
+  .text-gold   { color: var(--gold); }
+  .text-blue   { color: var(--blue-mid); }
+  .mt-sm { margin-top: 14px; }
+  .mt-md { margin-top: 28px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .stat-row { flex-direction: column; }
+    .chapter { padding: 60px 20px; }
+    .cta-section { padding: 80px 20px 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">受験生へ — 知っておくべき、残酷な真実</div>
+  <h1>努力しても伸びないのは、<br><em>「地図」がないからだ。</em></h1>
+  <p class="hero-sub">偏差値45から医学部合格。その経験から生まれた<br>あなただけの「合格ロードマップ」を、一緒に作ります。</p>
+  <div class="scroll-hint">
+    SCROLL
+    <span></span>
+  </div>
+</section>
+
+<!-- ══ CHAPTER 0 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch0">
+  <div class="chapter-label">
+    <div class="label-badge badge-red">第0章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 00</div>
+  </div>
+
+  <h2>まず最初に、あなたに伝えたい<br><span class="text-red">「残酷な真実」</span>があります。</h2>
+
+  <div class="truth-box">
+    <div class="label">WARNING</div>
+    <p>もし今、成績が伸び悩んでいて、学校や塾の先生に<br>
+    「<strong>絶対伸びるから安心してついてこい</strong>」と言われているなら——<br>
+    それは<strong>間違いです</strong>。</p>
+  </div>
+
+  <p>このままいくと、あなたは<strong>地獄を見ることになります</strong>。</p>
+
+  <p>なぜなら、どれだけ努力しても、どれだけ勉強時間を増やしても、
+  <strong>「本質的な勉強法」と「正しい計画」がなければ成績は絶対に伸びない</strong>からです。</p>
+
+  <p class="text-red" style="font-weight:700;">これは僕自身が、身をもって経験したことです。</p>
+</section>
+
+<!-- ══ CHAPTER 1 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="chapter-label">
+    <div class="label-badge badge-blue">第1章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 01</div>
+  </div>
+
+  <h2>かつての僕は、<br>努力しても伸びない<span class="text-blue">典型例</span>だった。</h2>
+
+  <p>かつての僕は、勉強のやり方を一切知らないまま、ただがむしゃらに努力していました。
+  中学生の頃には塾にも通っていました。でも、成績はまったく伸びなかった。</p>
+
+  <div class="pull-quote">
+    <p>「努力が足りなかった」からではない。<br>単純に、<em style="font-style:normal; color:var(--gold)">「勉強のやり方」を知らなかった</em>からです。</p>
+  </div>
+
+  <p>学校や塾で教えられていたのは、<strong>小手先のテクニックばかり</strong>。</p>
+
+  <ul class="bullet-list">
+    <li><div class="icon">1</div>ノートの取り方</li>
+    <li><div class="icon">2</div>モチベーション論</li>
+    <li><div class="icon">3</div>暗記のコツ</li>
+  </ul>
+
+  <p>もちろん意味がないわけではない。でも、それだけでは<strong>成績は本質的には伸びません</strong>。</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">2</div>
+      <div class="desc">中学時代の通知表<br>ほぼこの評定ばかり</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">40前半</div>
+      <div class="desc">当時の模試<br>偏差値</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">偏差値52</div>
+      <div class="desc">目標の高校すら<br>「厳しい」と言われた</div>
+    </div>
+  </div>
+
+  <p>どれだけ勉強しても伸びない。周りからは笑われる。<strong>本当に悔しかった。</strong></p>
+</section>
+
+<!-- ══ CHAPTER 2 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="chapter-label">
+    <div class="label-badge badge-blue">第2章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 02</div>
+  </div>
+
+  <h2>だから僕は、<br>勉強法を<span class="text-blue">徹底的に研究</span>した。</h2>
+
+  <div class="map-steps">
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner"></div></div>
+      <div class="body"><strong>本を読み漁り</strong><span>勉強法・認知科学・教育心理学…あらゆる分野を調べ尽くした</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner"></div></div>
+      <div class="body"><strong>実際に試し</strong><span>仮説を立て、自分の成績で検証し続けた</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner"></div></div>
+      <div class="body"><strong>失敗して</strong><span>うまくいかないときは原因を徹底的に分析した</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner"></div></div>
+      <div class="body"><strong>また修正する</strong><span>それを何年も繰り返してきた</span></div>
+    </div>
+  </div>
+
+  <p>そしてようやく、<strong>「必ず成績を伸ばすために必要なもの」</strong>が見えるようになった。</p>
+
+  <p>伸びなかった時期が長かったからこそ、</p>
+
+  <ul class="bullet-list">
+    <li><div class="icon">✓</div>なぜ伸びないのか</li>
+    <li><div class="icon">✓</div>どの勉強法が意味を持たないのか</li>
+    <li><div class="icon">✓</div>本当に必要な勉強とは何か</li>
+  </ul>
+
+  <p>…を、誰より深く理解しています。</p>
+
+  <div class="pull-quote">
+    <p>僕は天才ではありませんでした。<br>
+    でも高校では、周囲から<em style="font-style:normal; color:var(--gold)">「神童」</em>と呼ばれるようになった。<br>
+    それは才能があったからではなく、<strong>「本質的な勉強法」を知ったから</strong>です。</p>
+  </div>
+</section>
+
+<!-- ══ CHAPTER 3 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="chapter-label">
+    <div class="label-badge badge-blue">第3章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 03</div>
+  </div>
+
+  <h2>成績が伸びるかどうかは<br><span class="text-gold">「地図」</span>で決まる。</h2>
+
+  <p>偏差値45の僕が医学部に受かったのは、才能でも根性でもありません。</p>
+
+  <div class="truth-box" style="background: linear-gradient(135deg,rgba(212,160,23,0.12),rgba(212,160,23,0.03)); border-color:rgba(212,160,23,0.5);">
+    <div class="label" style="color:var(--gold);">KEY INSIGHT</div>
+    <p><strong style="color:var(--gold);">「合格までの地図（ロードマップ）」を作ったからです。</strong></p>
+  </div>
+
+  <p>その地図には、すべての答えがありました。</p>
+
+  <div class="map-steps">
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner" style="background:var(--gold-light);box-shadow:0 0 0 2px var(--gold-light);"></div></div>
+      <div class="body"><strong>何を</strong><span>やるべき教材・範囲を明確化する</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner" style="background:var(--gold-light);box-shadow:0 0 0 2px var(--gold-light);"></div></div>
+      <div class="body"><strong>どの順番で</strong><span>優先順位と学習の流れを設計する</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner" style="background:var(--gold-light);box-shadow:0 0 0 2px var(--gold-light);"></div></div>
+      <div class="body"><strong>どれだけ</strong><span>必要な量・時間を数値で把握する</span></div>
+    </div>
+    <div class="map-step">
+      <div class="dot"><div class="dot-inner" style="background:var(--gold-light);box-shadow:0 0 0 2px var(--gold-light);"></div></div>
+      <div class="body"><strong>どのレベルまで</strong><span>合格に必要な到達基準を定める</span></div>
+    </div>
+  </div>
+
+  <p>徹底的に分析して<strong>「設計図」</strong>にした。だから迷わなかった。<strong>だから最短で伸びた。</strong></p>
+</section>
+
+<!-- ══ CHAPTER 4 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="chapter-label">
+    <div class="label-badge badge-orange">第4章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 04</div>
+  </div>
+
+  <h2>あなたが伸びないのは、<br><span class="text-red">努力不足ではない。</span></h2>
+
+  <p>あなたが今まで伸びなかったのは、<strong>「地図がなかったから」</strong>です。</p>
+
+  <ul class="bullet-list">
+    <li><div class="icon" style="background:var(--red);">!</div><div><strong>自分の弱点は自分では見えない</strong><br><span style="font-size:0.88rem; color:var(--text-muted);">客観的な視点なしに自己分析するのは、鏡なしで髪を切るようなもの</span></div></li>
+    <li><div class="icon" style="background:var(--red);">!</div><div><strong>正しい順番は知らないと作れない</strong><br><span style="font-size:0.88rem; color:var(--text-muted);">学習には必ず「正しい積み上げ順」がある。それを知らずに進むと遠回りになる</span></div></li>
+    <li><div class="icon" style="background:var(--red);">!</div><div><strong>最短ルートは経験者しか分からない</strong><br><span style="font-size:0.88rem; color:var(--text-muted);">何が「無駄な努力」で、何が「本質的な努力」かは、歩いた人間にしか見えない</span></div></li>
+  </ul>
+
+  <div class="truth-box">
+    <div class="label">CONCLUSION</div>
+    <p><strong>だから、一人で計画を作るのは不可能に近い。</strong></p>
+  </div>
+</section>
+
+<!-- ══ CHAPTER 5 ══════════════════════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="chapter-label">
+    <div class="label-badge badge-yellow">第5章</div>
+    <div class="label-line"></div>
+    <div class="chapter-number">CHAPTER 05</div>
+  </div>
+
+  <h2>だから僕は、あなた専用の<br><span class="text-gold">「合格への地図」</span>を<br>一緒に作ることにした。</h2>
+
+  <p>僕が偏差値45から医学部に逆転したときに使った<strong>最短ルートの設計図</strong>を、あなたの状況に合わせて<strong>完全カスタマイズ</strong>して作る——</p>
+
+  <div class="truth-box" style="background:linear-gradient(135deg,rgba(212,160,23,0.15),rgba(212,160,23,0.03)); border-color:rgba(212,160,23,0.6); text-align:center; padding:36px 28px;">
+    <div class="label" style="color:var(--gold); text-align:center; font-size:12px;">SERVICE</div>
+    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(1.4rem,3.5vw,2rem); font-weight:900; color:var(--gold); line-height:1.5;">
+      『ロードマップ作成会』
+    </p>
+    <p style="font-size:0.95rem; color:var(--text-muted); margin-top:12px;">
+      あなたの現状・目標・弱点を徹底分析し、<br>
+      <strong style="color:var(--text);">あなただけの合格への設計図</strong>を一緒に作ります。
+    </p>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════ -->
+<div class="cta-section" id="cta">
+  <h2>さあ、<em>地図</em>を手に入れよう。<br>最短で合格を掴む旅が始まる。</h2>
+  <p>あなたの努力を、正しい方向に使うために。<br>今すぐ「ロードマップ作成会」に申し込んでください。</p>
+  <button class="cta-btn">ロードマップ作成会に申し込む</button>
+  <div class="cta-note">※ 枠に限りがあります。お早めにご確認ください。</div>
+</div>
+
+<footer>
+  © ロードマップ作成会 All rights reserved.
+</footer>
+
+<script>
+  // Intersection Observer for fade-in
+  const targets = document.querySelectorAll('.chapter, .cta-section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  targets.forEach(t => obs.observe(t));
+</script>
+</body>
+</html>
